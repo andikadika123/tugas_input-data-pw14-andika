@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>input nilai</title>
+</head>
+<style>
+    * {
+        cursor: pointer
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin-top: 0%;
+        background-color: rgb(66, 183, 183);
+        flex-direction: column;
+    }
+    .cotainer{
+        justify-content: center;
+        align-items: center;
+        padding: 0px 150px 50px; 
+        background: greenyellow;
+        box-shadow: 0 5px 10px;
+    }
+
+    .button{
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        border-radius: 20px;
+        box-shadow: 50px;
+    }
+</style>
+<body>
+    <div class="container"
+    <center>
+        <h2>INPUT DATA</h2>
+        <label for="nama"><b>NAMA:</label>
+            <br>
+            <input type="text" id="nama" class="display">
+            <br><br>
+        <label for="npm">NPM:</label>
+            <br>
+            <input type="number" id="npm" class="display">
+            <br><br>
+        <label for="nilai">NILAI:</label>
+            <br>
+            <input type="number" id="nilai" class="display">
+            <br><br>
+            <div class="button"></div>
+            <button onclick="proses()"><b>proses</b></button>
+            <button onclick="reset()"><b>reset</b></button>
+            </diV>
+    </center>
+    <script>
+        function proses(){
+            var nama = document.getElementById("nama").value;
+            var npm = document.getElementById("npm").value;
+            var nilai = document.getElementById("nilai").value;
+
+            var status ="";
+            var grade ="";
+
+            if (nilai >=90){
+                status ="LULUS";
+                grade ="A";
+            }
+            else if (nilai >=80){
+                status ="LULUS";
+                grade ="B+";
+            }
+            else if (nilai >=70){
+                status ="LULUS";
+                grade ="B";
+            }
+            else if (nilai >=60){
+                status ="TIDAK LULUS";
+                grade ="C";
+            }
+            else if (nilai >=50){
+                status ="LULUS";
+                grade ="D";
+            }
+            else {
+                status ="TIDAK LULUS";
+                grade = "E"
+            }
+            document.write("<h2>nama : "+ nama +"</h2>");
+            document.write("<h2>npm : "+ npm +"</h2>");
+            document.write("<h2>nilai : "+ nilai +"</h2>");
+            document.write("<h2>status : "+ status +"</h2>");
+            document.write("<h2>grade : "+ grade +"</h2>");
+            
+        }
+
+        function reset (){
+            document.getElementById('nama').value='';
+            document.getElementById('npm').value='';
+            document.getElementById('nilai').value='';
+        }
+    </script>
+
+    
+</body>
+</html>
